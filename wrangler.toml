@@ -1,0 +1,18 @@
+name = "lead-capture-worker"
+main = "src/worker.js"
+compatibility_date = "2024-09-01"
+
+# Route the Worker in front of your site
+# routes = [{ pattern = "example.com/*", zone_name = "example.com" }]
+
+[vars]
+LEAD_TO = "sales@example.com"     # where lead emails go (must be a verified Email Routing destination)
+FROM_DOMAIN = "example.com"       # a domain with Email Routing enabled
+
+[[send_email]]
+name = "SEND_EMAIL"
+
+# Optional: also store every lead in KV
+# [[kv_namespaces]]
+# binding = "LEADS"
+# id = "<your KV namespace id>"
